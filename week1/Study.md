@@ -61,4 +61,4 @@
 2. Console panel => 동작하기 위한 패널, 브라우저가 어떻게 동작하는지 조절, JS 코드 즉시 실행 가능
 3. Network panel => 웹 사이트에서 통신하고 있는 모든 정보, 리소스들이 예상대로 다운로드, 업데이트 되는지, 웹 페이지와 서버 사이에서 데이트 흐름을<br>
    분석하고, 문제 발생시 해결책 찾도록 개발자 지원
-4. Application panel
+4. Application panel a
