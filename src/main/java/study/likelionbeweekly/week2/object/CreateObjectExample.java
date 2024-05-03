@@ -1,4 +1,4 @@
-package study.week2.object;
+package study.likelionbeweekly.week2.object;
 
 public class CreateObjectExample {
 
