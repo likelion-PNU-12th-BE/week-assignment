@@ -1,4 +1,4 @@
-## 📕 [기본] **라이브러리와 프레임워크 비교해보기**
+## 📕 [기본] **라이브러리와 프레임워크 비교해보기**
 ### 라이브러리란?
 특정 기능을 수행하기 위한 함수나 클래스의 집합.
 개발자가 직접 동작을 제어하는 관점이라고 보면 편함.
@@ -14,7 +14,7 @@
 라이브러리는 특정 기능을 구현하기 위한 도구의 모임이며, 동작을 직접 제어해야 한다. 그렇기 때문에 대규모 프로그램을 제작할 때 많은 동작을 직접 제어해야 한다.
 반면 프레임워크는 개발자가 작성한 코드를 프레임워크의 구조에 맞게 동작하도록 하므로 대규모 개발에 적절하다.
 
-#### 📕 **[기본]** 객체, 인스턴스 비교하기
+#### 📕 **[기본]** 객체, 인스턴스 비교하기
 ##### 클래스란?
 객체와 인스턴스를 비교하기 이전에 클래스에 대해서 이해할 필요가 있다.
 클래스는 객체의 속성과 동작을 정의한 틀이나 템플릿이라고 생각하면 된다.
@@ -102,3 +102,52 @@ com.project.weekassignment.week2.Service@5305068a
 ```
 
 매 인스턴스의 주소가 다름을 알 수 있다. 이는 매번 새로운 인스턴스가 생성됨을 의미한다.
+
+## **싱글톤 패턴**
+
+### 📕 **[기본]** 객체가 무한히 생성됐을 때의 문제점 알아보기
+앞서 동일한 객체를 여러번 생성했다. 특정 동작을 해야한다면 그때마다 객체를 생성해서 대응하게 된다. 하지만 이를 여러번 실행할 경우 메모리에 클래스를 여러번 썼다 지웠다를 반복하게 되거나, 객체를 한번 생성할 때 많은 자원을 요구할 수도 있다. 이를 해결하려면 하나의 인스턴스만으로 동작해야 한다. 이렇게 되면 객체를 여러번 생성하는데 드는 비용을 절감할 수 있다.
+### 📕 **[기본]** 싱글톤 패턴 알아보기
+위 문제를 해결하기 위해서는 싱글턴 패턴(Singleton Pattern)이라는 디자인 패턴을 사용해야 한다. 싱글턴 패턴은 특정 클래스의 인스턴스가 하나만 생성되도록 보장하며, 이 인스턴스에 대한 글로벌 접근 지점을 제공한다. 그러므로 클래스에 대해 인스턴스는 하나만 존재하게 된다.
+또한 전역 변수와 마찬가지로 싱글턴 패턴을 사용하면 프로그램의 모든 곳에서부터 접근할 수 있지만 인스턴스를 덮어쓰지 못하게 보호하는 장점이 있다.
+### 💻 **[심화]** Java 코드로 싱글톤 패턴 구현해보기
+```
+package com.project.weekassignment.week2;  
+  
+public class SingletonTest {  
+    public static void main(String[] args) {  
+       for (int i = 0; i < 100; i++) {  
+          Singleton singleton = Singleton.getInstance();  
+          System.out.println(singleton);  
+       }  
+    }  
+}  
+  
+class Singleton {  
+    private static Singleton instance;  
+  
+    private Singleton() {  
+    }  
+  
+    public static Singleton getInstance() {  
+       if (instance == null) {  
+          instance = new Singleton();  
+       }  
+  
+       return instance;  
+    }  
+}
+```
+출력 :
+```
+com.project.weekassignment.week2.Singleton@4517d9a3
+com.project.weekassignment.week2.Singleton@4517d9a3
+com.project.weekassignment.week2.Singleton@4517d9a3
+com.project.weekassignment.week2.Singleton@4517d9a3
+.
+.
+.
+
+```
+
+매번의 인스턴스를 요청할때마다 동일한 인스턴스가 반환됨을 알 수 있다.
