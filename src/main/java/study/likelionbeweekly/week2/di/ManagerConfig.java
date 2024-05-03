@@ -1,4 +1,4 @@
-package study.likelionbeweekly.di;
+package study.likelionbeweekly.week2.di;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package study.likelionbeweekly.di;
+package study.likelionbeweekly.week2.di;
 
 public class NewCoffeeManager implements Manager {
 
