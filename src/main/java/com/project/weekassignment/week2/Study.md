@@ -65,3 +65,40 @@ Hello, my name is Bob and I'm 32 years old.
 
 ##### 결론
 객체는 인스턴스와 동일하게 생각해도 충분하다. 그럼에도 구분하자면 객체는 변수와 메서드를 가지고 있는 논리적인 인스턴스라고 생각한다. 반대로 인스턴스는 객체의 동작을 물리적으로 수행하는 메모리 상태라고 생각한다.
+
+#### 💻 **[기본]** 자바 객체 100개 생성 해보기
+간단한 클래스를 생성한 뒤 객체를 100개 생성해보자
+
+```
+package com.project.weekassignment.week2;  
+  
+public class CreateObject100Times {  
+  
+    public static void main(String[] args) {  
+       for (int i = 0; i < 100; i++) {  
+          Service service = new Service();  
+          System.out.println(service);  
+       }  
+    }  
+}  
+  
+class Service {  
+    public Service() {  
+    }  
+}
+```
+#### 💻 **[심화]** 100개의 객체 로그 찍어보기
+출력 :
+```
+com.project.weekassignment.week2.Service@4517d9a3
+com.project.weekassignment.week2.Service@372f7a8d
+com.project.weekassignment.week2.Service@2f92e0f4
+com.project.weekassignment.week2.Service@28a418fc
+com.project.weekassignment.week2.Service@5305068a
+.
+.
+.
+.
+```
+
+매 인스턴스의 주소가 다름을 알 수 있다. 하지만 사용하려는 서비스는 동일한 동작을 하는데 굳이 매 요청마다 서비스를 생성할 필요가 없다.
