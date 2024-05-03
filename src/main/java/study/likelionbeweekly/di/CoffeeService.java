@@ -2,13 +2,13 @@ package study.likelionbeweekly.di;
 
 public class CoffeeService {
 
-    private final CoffeeManger coffeeManger;
+    private final Manager manager;
 
-    public CoffeeService() {
-        this.coffeeManger = new CoffeeManger();
+    public CoffeeService(Manager manager) {
+        this.manager = manager;
     }
 
     public void sale() {
-        coffeeManger.makeCoffee();
+        manager.makeCoffee();
     }
 }
