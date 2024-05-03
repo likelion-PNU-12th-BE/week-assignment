@@ -13,3 +13,55 @@
 ### 결론
 라이브러리는 특정 기능을 구현하기 위한 도구의 모임이며, 동작을 직접 제어해야 한다. 그렇기 때문에 대규모 프로그램을 제작할 때 많은 동작을 직접 제어해야 한다.
 반면 프레임워크는 개발자가 작성한 코드를 프레임워크의 구조에 맞게 동작하도록 하므로 대규모 개발에 적절하다.
+
+#### 📕 **[기본]** 객체, 인스턴스 비교하기
+##### 클래스란?
+객체와 인스턴스를 비교하기 이전에 클래스에 대해서 이해할 필요가 있다.
+클래스는 객체의 속성과 동작을 정의한 틀이나 템플릿이라고 생각하면 된다.
+#####  객체란?
+객체는 클래스의 인스턴스이다.
+객체를 생성할 때 생성하려는 객체의 클래스의 인스턴스를 생성한다.
+자바에서 객체를 생성할 때, 자체 속성 집합을 갖고 클래스에 정의된 동작을 기반으로 작업을 수생할 수 있는 해당 클래스의 인스턴스를 생성한다.
+#####  인스턴스란?
+인스턴스는 런타임 시 특정 클래스 객체가 메모리에 실제로 존재하는 상태이다. "new" 키워드를 사용하여 생성되며 상태를 저장하는 자체 인스턴스 변수 세트를 사용해 `고유한 메모리 할당`을 나타낸다. 구체적인 의미로는 실제로 메모리가 할당되어 동작하는 사례를 의미한다.
+
+```
+// Java Program to demonstrate 
+// Object in Java 
+import java.io.*; 
+
+// Driver Class 
+public class Person { 
+	String name; 
+	int age; 
+
+	public void sayHello() 
+	{ 
+		System.out.println("Hello, my name is " + name 
+						+ " and I'm " + age 
+						+ " years old."); 
+	} 
+
+	// main function 
+	public static void main(String[] args) 
+	{ 
+		Person person1 = new Person(); // 객체 생성
+		person1.name = "kumar"; // 속성 1
+		person1.age = 27; // 속성 2
+		person1.sayHello(); // 동작
+
+		Person person2 = new Person();  // 객체 생성
+		person2.name = "Bob"; // 속성 1
+		person2.age = 32; // 속성 2
+		person2.sayHello(); // 동작
+	} 
+}
+```
+출력 :
+```
+Hello, my name is kumar and I'm 27 years old.  
+Hello, my name is Bob and I'm 32 years old.
+```
+
+##### 결론
+객체는 인스턴스와 동일하게 생각해도 충분하다. 그럼에도 구분하자면 객체는 변수와 메서드를 가지고 있는 논리적인 인스턴스라고 생각한다. 반대로 인스턴스는 객체의 동작을 물리적으로 수행하는 메모리 상태라고 생각한다.
