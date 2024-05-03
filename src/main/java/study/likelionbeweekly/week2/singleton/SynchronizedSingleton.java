@@ -7,7 +7,7 @@ public class SynchronizedSingleton {
     private SynchronizedSingleton() {
     }
 
-    public SynchronizedSingleton getInstance() {
+    public static SynchronizedSingleton getInstance() {
         synchronized (SynchronizedSingleton.class) {
             if (INSTANCE == null) {
                 INSTANCE = new SynchronizedSingleton();
