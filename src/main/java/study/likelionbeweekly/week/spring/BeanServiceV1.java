@@ -1,9 +1,9 @@
-package study.likelionbeweekly.week2.spring;
+package study.likelionbeweekly.week.spring;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 @RequiredArgsConstructor
 public class BeanServiceV1 {
 
