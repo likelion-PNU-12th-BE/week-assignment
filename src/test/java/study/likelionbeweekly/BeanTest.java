@@ -25,6 +25,8 @@ class BeanTest {
 
     @Test
     void singletonBeanTest() {
+        StringBuilder stringBuilder = new StringBuilder();
+        Character.getNumericValue()
         beanServiceV1.confirm();
         beanServiceV2.confirm();
         beanServiceV3.confirm();
