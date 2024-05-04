@@ -1,10 +1,10 @@
-package study.likelionbeweekly.week.spring;
+package study.likelionbeweekly.week2.spring;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class BeanConfig {
+public class ApplicationConfig {
 
     @Bean
     public DefaultService defaultService() {
