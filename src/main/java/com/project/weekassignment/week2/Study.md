@@ -152,22 +152,20 @@ com.project.weekassignment.week2.Singleton@4517d9a3
 
 매번의 인스턴스를 요청할때마다 동일한 인스턴스가 반환됨을 알 수 있다.
 
-### 💻 **[심화]** 싱글톤 패턴 동시성 문제 고려해보기
-    - 힌트: `synchronized` 키워드
 ### 💻 **[심화]** Java 코드로 싱글톤 패턴 구현 확인해보기
 
-## 📕 [심화] **왜 스프링을 써야하는지 고민해보기**
+## 📕 [심화] **왜 스프링을 써야하는지 고민해보기**
 
 ## **스프링 빈과 스프링 컨테이너**
 
-### 📕 **[기본]** 스프링 빈이 무엇인지 알아보기
+### 📕 **[기본]** 스프링 빈이 무엇인지 알아보기
 우리는 백엔드 프레임워크로써 스프링을 사용하기로 했다. 그러므로 스프링의 핵심 개념인 Bean 을 이해할 필요가 있다.
 [스프링 공식 문서](https://docs.spring.io/spring-framework/reference/core/beans/introduction.html)에서는 빈을 이렇게 정의했다.
 스프링에서 애플리케이션의 백본을 형성하고 스프링 IoC Container에 의해 관리되는 객체를 Bean 이라고 한다. 여기서 IoC 에 의해 관리된다는 것은 인스턴스화, 어셈블링 및 관리됨을 의미한다.
-### 📕 **[기본]** 스프링 컨테이너가 무엇인지 알아보기
+### 📕 **[기본]** 스프링 컨테이너가 무엇인지 알아보기
 또 여기서 IoC Container는 무엇인지 알 필요가 있다. IoC(Inversion of Control)은 객체가 종속성을 생성하지 않고 정의하는 프로세스이다. 한 객체가 종속성을 생성하지 않는다는 것은 이 객체가 요구하는 다른 객체를 별도로 정의하지 않는다는 것을 의미한다. 즉 의존해야하는 객체를 생성하지 않고 정의하는 것이다. 이 의존성을 IoC Container 해결해준다. 필요한 의존성을 충족하는 것을 IoC Container에게 떠넘기는 방식이다. IoC Container가 등록된 인스턴스를 제공해서 의존성을 충족해주는 방식으로 동작한다.
 
-### 📕 **[기본]** `@Bean`, `@Configuration` 애노테이션 알아보기
+### 📕 **[기본]** `@Bean`, `@Configuration` 애노테이션 알아보기
 `@Bean`은 IoC 컨테이너에 Bean을 등록하는 어노테이션으로 직접 빈을 등록할 때 사용한다. 메서드에 적용한다.
 `@Configuration`의 경우는 클래스에 지정하며 `@Bean`을 구성하기 위한 클래스라고 지정하는 역할을 한다.
 `@Component` 어노테이션은 클래스에 지정하며 클래스를 `Bean`으로 등록하기 위한 어노테이션이다.
@@ -184,7 +182,7 @@ com.project.weekassignment.week2.Singleton@4517d9a3
 
 기존 의존관계의 객체 생성 방식
 ```
-Address address = new Address("High Street", 1000);
+Address address = new Address("High Street", 1000);
 Company company = new Company(address);
 ```
 `@Bean`으로 변경된 방식
