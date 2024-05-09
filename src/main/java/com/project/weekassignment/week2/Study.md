@@ -229,3 +229,83 @@ public class MainApplication {
     }  
 }
 ```
+## **의존 주입(DI ; Dependency Injection)**
+
+
+### 📕 **[기본]** 의존 주입이 무엇인지 알아보기
+하나의 객체가 다른 객체의 의존성을 제공하는 방법.  
+예를 들어 클라이언트는 어떠한 서비스를 제공받아야 한다.  
+이때 클라이언트가 어떤 서비스를 받는지 **지정하는 것이 아니다**.  
+클라이언트에게 어떤 서비스인지를 **전달해주는 것이다**.  
+이렇게 되면 클라이언트는 추상적으로 설계된 서비스를 정해진 동작으로 수행하지만, 
+서비스의 구체화된 동작은 외부에서 제어할 수 있다.  
+이 방식의 장점은 객체의 생성과 사용의 **관심을 분리**하는것이다.  
+클라이언트와 서비스는 각각 자신의 동작만을 구현하면하면되므로, 가독성과 코드 재사용이 높아지는 효과가 있다.
+
+### 📕 **[기본]** 스프링에서 어떻게 의존 주입이 일어나는지 알아보기
+### 💻 **[기본]** Java 코드로 필드 주입 실습해보기
+### 💻 **[기본]** Java 코드로 생성자 주입 실습해보기
+### 💻 **[기본]** Java 코드로 Setter 주입 실습해보기
+#### 1. 생성자 주입
+생성자가 한번만 호출되는 특징을 활용하는 방법이다.
+생성자 호출시점에 파라미터로 의존관계를 정의할 수 있다.
+```
+@Component
+public class CustomServiceImpl implements Service {
+    private final CustomRepository repository;
+    
+    @Autowired
+    public CustomServiceImpl(CustomRepository repository) {
+        this.repository = repository;
+    }
+}
+```
+
+#### 2. 수정자 주입 (setter 주입)
+setter 메서드를 활용한 방법이다.
+`@Autowired` 어노테이션이 setter 메서드에 붙게되며, 의존변수에서 final 설정이 사라진다.  
+그러므로 해당 값이 바뀔 수 있다.
+```
+@Component
+public class CustomServiceImpl implements Service {
+    private CustomRepository repository;
+    
+    @Autowired
+    public void setCustomRepository(CustomRepository repository) {
+        this.repository = repository;
+    }
+}
+```
+#### 3. 필드 주입
+필드값 자체에 주입하는 방법이 있다.
+이 방법은 DI 기능이 동작하지 않으면 오류가 발생한다.
+다르게 해석하면, DI 기능이 동작하지 않으면 외부에서 변경이 불가능하고 별도의 설정이 없으면 null 값으로 설정된다.
+
+```
+@Component
+public class CustomServiceImpl implements Service {
+    @Autowired
+    private CustomRepository repository;
+}
+```
+#### 4. 일반 메서드 주입
+별도의 메서드에서 주입하는 방법.
+setter 와 비슷한 방식이지만, 
+```
+@Component
+public class CustomServiceImpl implements Service {
+    private CustomRepository repository;
+    
+    @Autowired
+    public void init(CustomRepository repository) {
+        this.repository = repository;
+    }
+}
+```
+
+
+## **제어의 역전(IoC ; Inversion of Control)**
+### 📕 **[기본]** 제어의 역전이 무엇인지 알아보기
+프로그래머가 작성한 프로그램이 재사용 라이브러리의 흐름 제어를 받게 되는 소프트웨어 디자인 패턴.  
+즉 내가 짠 코드를 프래임워크가 제어하는 것.
+예를 들어 Controller, Service, Repository 를 작성하면 프레임워크가 자동으로 각 동작을 연결하는 방식.
