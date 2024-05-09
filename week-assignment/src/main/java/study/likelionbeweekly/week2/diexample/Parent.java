@@ -1,4 +1,4 @@
-package com.project.weekassignment.week2.diexample;
+package study.likelionbeweekly.week2.diexample;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

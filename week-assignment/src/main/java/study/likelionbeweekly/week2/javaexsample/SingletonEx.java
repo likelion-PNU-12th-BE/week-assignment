@@ -1,4 +1,4 @@
-package com.project.weekassignment.week2.javaexsample;
+package study.likelionbeweekly.week2.javaexsample;
 
 public class SingletonEx {
 

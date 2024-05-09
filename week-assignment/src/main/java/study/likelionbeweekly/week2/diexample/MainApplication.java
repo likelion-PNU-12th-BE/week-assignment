@@ -1,9 +1,8 @@
-package com.project.weekassignment.week2.diexample;
+package study.likelionbeweekly.week2.diexample;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class MainApplication {
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext context
