@@ -9,6 +9,7 @@ public class example {
 
         CoffeeService coffeeService1 = new CoffeeService(coffeeManager);
         CoffeeService coffeeService2 = new CoffeeService(newCoffeeManager);
+        CoffeeService coffeeService3 = new CoffeeService(new CoffeeManager());
 
         coffeeService1.sale();
         coffeeService2.sale();
