@@ -64,3 +64,40 @@
 MVC 패턴을 사용하면 각각의 요소가 분리되어 동작한다는 것을 알 수 있다.
 유지보수 등의 관리가 쉽다는 장점이 있다.
 ---
+### 로깅이란?
+시스템 동작시 시스템의 상태와 작동 정보를 시간에 따라 기록하는 것이다.
+그 기록을 로그라고 한다.
+
+로깅에는 로그 레벨을 통해서 로그를 기록한다.
+
+- Fatal : 매우 심각한 에러, 프로그램 종료됨
+- Error : 의도하지 않은 에러, 프로그램 종료되지 않음
+- Warn : 에러가 될 수 있는 잠재적 가능성
+- Info : 명확한 의도가 있는 에러, 요구 사항에 따라 시스템 동작을 보여줄 때
+- Debug : Info 레벨보다 더 자세한 정보가 필요한 경우, Dev 환경
+- Trace : Debug 레벨보다 더 자세한 환경, Dev 환경에서 디버그하기 위해 사용
+
+
+    > system.out.println()을 사용
+        System.out.println("logging 로깅 !!");
+        System.err.println("error 에러 !!");
+
+    > Slf4j 사용
+        logger.error("에러!! {}", count);
+        logger.debug("디버그!! {}, count);
+        logger.warn("워닝!! {}, count);
+        logger.trace("트레이스!! {}, count);
+        logger.info("인포!! {}, count);
+
+
+### @Slf4j 애노테이션
+
+클래스를 생성할 때마다 항상 로그를 남기기 위해 Logger 변수를 선언해야 했는데 
+Lombok의 @Slf4j 어노테이션을 사용하면
+자동으로 log 변수를 선언하여 편리하게 log를 찍을 수 있다.
+변수명이 log로 고정된다.
+
+    @Slf4j
+    log.Info("인포!! 테스트!! ");
+    log.warn("경고!!");
+    ...
