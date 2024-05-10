@@ -1,4 +1,4 @@
-package com.project.weekassignment.week2.session;
+package study.likelionbeweekly.week2.session;
 
 public class Person {
 

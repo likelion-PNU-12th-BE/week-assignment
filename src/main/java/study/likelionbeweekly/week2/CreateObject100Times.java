@@ -1,4 +1,4 @@
-package com.project.weekassignment.week2;
+package study.likelionbeweekly.week2;
 
 public class CreateObject100Times {
 

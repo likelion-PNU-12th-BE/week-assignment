@@ -70,7 +70,7 @@ Hello, my name is Bob and I'm 32 years old.
 간단한 클래스를 생성한 뒤 객체를 100개 생성해보자
 
 ```
-package com.project.weekassignment.week2;  
+package com.project.likelionbeweekly.week2;  
   
 public class CreateObject100Times {  
   
@@ -90,11 +90,11 @@ class Service {
 #### 💻 **[심화]** 100개의 객체 로그 찍어보기
 출력 :
 ```
-com.project.weekassignment.week2.Service@4517d9a3
-com.project.weekassignment.week2.Service@372f7a8d
-com.project.weekassignment.week2.Service@2f92e0f4
-com.project.weekassignment.week2.Service@28a418fc
-com.project.weekassignment.week2.Service@5305068a
+com.project.likelionbeweekly.week2.Service@4517d9a3
+com.project.likelionbeweekly.week2.Service@372f7a8d
+com.project.likelionbeweekly.week2.Service@2f92e0f4
+com.project.likelionbeweekly.week2.Service@28a418fc
+com.project.likelionbeweekly.week2.Service@5305068a
 .
 .
 .
@@ -112,7 +112,7 @@ com.project.weekassignment.week2.Service@5305068a
 또한 전역 변수와 마찬가지로 싱글턴 패턴을 사용하면 프로그램의 모든 곳에서부터 접근할 수 있지만 인스턴스를 덮어쓰지 못하게 보호하는 장점이 있다.
 ### 💻 **[심화]** Java 코드로 싱글톤 패턴 구현해보기
 ```
-package com.project.weekassignment.week2;  
+package com.project.likelionbeweekly.week2;  
   
 public class SingletonTest {  
     public static void main(String[] args) {  
@@ -140,10 +140,10 @@ class Singleton {
 ```
 출력 :
 ```
-com.project.weekassignment.week2.Singleton@4517d9a3
-com.project.weekassignment.week2.Singleton@4517d9a3
-com.project.weekassignment.week2.Singleton@4517d9a3
-com.project.weekassignment.week2.Singleton@4517d9a3
+com.project.likelionbeweekly.week2.Singleton@4517d9a3
+com.project.likelionbeweekly.week2.Singleton@4517d9a3
+com.project.likelionbeweekly.week2.Singleton@4517d9a3
+com.project.likelionbeweekly.week2.Singleton@4517d9a3
 .
 .
 .

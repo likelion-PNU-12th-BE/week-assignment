@@ -1,4 +1,4 @@
-package com.project.weekassignment.week2.beanexample;
+package study.likelionbeweekly.week2.beanexample;
 
 public class Address {
 	private String street;
