@@ -11,6 +11,8 @@ public class CoffeeService {
 
     // Setter 주입
     // private Manager manager;
+
+    // @Autowired
     // public void setManager(Manager manager) {
     //     this.manager = manager;
     // }
