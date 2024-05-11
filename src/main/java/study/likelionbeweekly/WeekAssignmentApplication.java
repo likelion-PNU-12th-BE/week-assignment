@@ -1,4 +1,4 @@
-package com.project.weekassignment;
+package study.likelionbeweekly;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
