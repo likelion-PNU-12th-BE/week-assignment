@@ -1,5 +1,5 @@
 package study.likelionbeweekly.week2.spring;
 
-public class Manager {
+public interface Manager {
     void makeCoffee();
 }
