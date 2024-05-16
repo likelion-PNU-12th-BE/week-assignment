@@ -1,6 +1,7 @@
 package study.likelionbeweekly.week3.service;
 
 import java.util.Objects;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,6 +11,7 @@ import study.likelionbeweekly.week3.repository.UserRepository;
 
 // 이곳에 서비스 빈을 등록해보세요.
 @Service
+@Slf4j
 public class UserServiceImpl implements UserService {
 
 	// 이곳에 UserRepository 를 주입 받아 보세요.
@@ -42,8 +44,10 @@ public class UserServiceImpl implements UserService {
 		if (Objects.isNull(user)) {
 			// 이곳에 id 와 password 로 새로운 user 를 만들어서 반환해보세요.
 			return new User(id,password);
+		} else{
+			log.error("아이디 중복: {}",id);
+			throw new IllegalStateException("아이디 중복");
 		}
-		throw new IllegalStateException("아이디 중복");
 	}
 
 	@Override
@@ -62,7 +66,10 @@ public class UserServiceImpl implements UserService {
 		if (id.equals(user.getId()) && password.equals(user.getPassword())) {
 			model.addAttribute("id", id);
 			return user;
+		} else{
+			log.error("로그인 실패 : 사용자 ID 또는 비밀번호 불일치");
+			throw new IllegalStateException("로그인 실패");
 		}
-		throw new IllegalStateException("로그인 실패");
 	}
+
 }
