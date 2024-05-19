@@ -14,7 +14,7 @@ class Singleton
         num1 = 10;
     }
     public static synchronized Singleton getSingleton()//싱글톤 synchronized이용으로 동시성 해결
-    {
+    {//아직 메소드 안에서 해결을 못했습니다.
         if(singleton == null)
         {
             singleton = new Singleton();

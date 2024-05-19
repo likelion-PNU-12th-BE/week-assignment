@@ -12,10 +12,10 @@ public class Apple_Sales_Man implements Sales_Man{
     private Storages storages;
 
     @Autowired
-    public Apple_Sales_Man(int Money, int Product_Price, @Qualifier("Apples_Storages") Storages storages)
+    public Apple_Sales_Man( @Qualifier("Apples_Storages") Storages storages)
     {
-        this.Money = Money;
-        this.Product_Price = Product_Price;
+        this.Money = 10;
+        this.Product_Price = 10;
         this.storages = storages;
     }
     @Override

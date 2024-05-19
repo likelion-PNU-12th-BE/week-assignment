@@ -18,15 +18,12 @@ public class Application {
     }
     @Bean
     public Sales_Man Banana_SalesMan(){
-        return new Banana_Sales_Man(Moneys(),3,Banana_Storages());
+        return new Banana_Sales_Man(Banana_Storages());
     }
     @Bean
     public Sales_Man Apple_SalesMan(){
-        return new Apple_Sales_Man(Moneys(), 5, Apples_Storages());
+        return new Apple_Sales_Man( Apples_Storages());
     }
-    @Bean
-    public int Moneys(){
-        return 0;
-    }
+
 
 }
