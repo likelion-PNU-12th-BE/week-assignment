@@ -2,6 +2,7 @@ package study.likelionbeweekly.week3.repository;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import org.springframework.stereotype.Repository;
 import study.likelionbeweekly.week3.domain.User;
 
@@ -17,7 +18,7 @@ public class InMemoryUserRepository implements UserRepository {
     }
 
     @Override
-    public User findById(String id) {
-        return users.get(id);
+    public Optional<User> findById(String id) {
+        return Optional.ofNullable(users.get(id));
     }
 }
