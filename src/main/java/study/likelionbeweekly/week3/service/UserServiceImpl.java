@@ -1,6 +1,6 @@
 package study.likelionbeweekly.week3.service;
 
-import java.util.Objects;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
@@ -20,13 +20,10 @@ public class UserServiceImpl implements UserService {
 	}
 
 	private User createUser(String id, String password) {
-		User user = findUser(id);
-
-		if (Objects.isNull(user)) {
-			return User.builder()
-					.id(id)
-					.password(password)
-					.build();
+		try {
+			findUser(id);
+		} catch (IllegalStateException e) {
+			return new User(id, password);
 		}
 		throw new IllegalStateException("아이디 중복");
 	}
@@ -38,7 +35,11 @@ public class UserServiceImpl implements UserService {
 	}
 
 	private User findUser(String id) {
-		return userRepository.findById(id);
+		Optional<User> user = userRepository.findById(id);
+		if (user.isPresent()) {
+			return user.get();
+		}
+		throw new IllegalStateException("등록된 유저 없음");
 	}
 
 	private User compare(String id, String password, User user, Model model) {
