@@ -9,7 +9,7 @@ public class Main {
         UserRepository userRepository = new UserRepository();
         UserView userView = new UserView();
         UserService uesrService = new UserService(userRepository);
-        UserController userController = new UserController(userRepository, userView,uesrService);
+        UserController userController = new UserController(userView,uesrService);
 
         try{
             userController.processUserRequest();
