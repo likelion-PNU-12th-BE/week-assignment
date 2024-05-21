@@ -1,1 +1,4 @@
-# week1-assignment
+# LIKELION BE Study <br/>weekly assignment
+by hyerin
+
+
