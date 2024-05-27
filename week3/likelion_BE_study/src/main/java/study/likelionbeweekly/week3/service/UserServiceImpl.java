@@ -39,10 +39,9 @@ public class UserServiceImpl implements UserService {
 
 		if (Objects.isNull(user)) {
 			// 이곳에 id 와 password 로 새로운 user 를 만들어서 반환해보세요.
-			User user1 = new User(id, password);
-			return user1;
+			return new User(id, password);
 		}
-		log.info("Duplicated ID");
+		log.error("Duplicated ID: {}", id);
 		throw new IllegalStateException("아이디 중복");
 
 	}
@@ -64,7 +63,7 @@ public class UserServiceImpl implements UserService {
 			log.info("Log in success");
 			return user;
 		}
-		log.info("Log in failed");
+		log.error("Log in failed");
 		throw new IllegalStateException("로그인 실패");
 	}
 }
