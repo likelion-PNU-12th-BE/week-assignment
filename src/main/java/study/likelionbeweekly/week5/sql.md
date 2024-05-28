@@ -1,3 +1,31 @@
+## ERD
+![ERD.png](image%2FERD.png)
+### Members
+- 멤버 id - PK
+- 멤버이름
+- 전화번호
+- 삭제여부
+- 생성일자
+- 생정시간
+### Posts
+- 게시글 id - PK
+- 멤버 id - FK
+- 제목
+- 내용
+- 조회수
+- 삭제여부
+- 생성일자
+- 생성시간
+### Comments
+- 댓글 id - PK
+- 게시글 id - FK
+- 멤버 id - FK
+- 댓글 내용
+- 추천수
+- 비추천수
+- 삭제여부
+- 생성일자
+- 생성시간
 ## CRUD
 ### CREATE
 
