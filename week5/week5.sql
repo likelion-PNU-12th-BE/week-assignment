@@ -1,0 +1,35 @@
+CREATE TABLE `Member` (
+	`MemberId`	int	NOT NULL,
+	`name`	VARCHAR(20)	NOT NULL,
+	`password`	VARCHAR(20)	NOT NULL,
+	`email`	VARCHAR(50)	NOT NULL
+);
+
+CREATE TABLE `Post` (
+	`PostId`	int	NOT NULL,
+	`title`	VARCHAR(50)	NOT NULL,
+	`content`	VARCHAR(200)	NOT NULL,
+	`JoinDate`	DATETIME	NOT NULL	DEFAULT CURRENT_TIMESTAMP,
+	`MemberId`	int	NOT NULL
+);
+
+CREATE TABLE `Comment` (
+	`CommentId`	int	NOT NULL,
+	`Content`	VARCHAR(100)	NOT NULL,
+	`JoinDate`	DATETIME	NOT NULL	DEFAULT CURRENT_TIMESTAMP,
+	`MemberId`	int	NOT NULL,
+	`PostId`	int	NOT NULL
+);
+
+ALTER TABLE `Member` ADD CONSTRAINT `PK_MEMBER` PRIMARY KEY (
+	`MemberId`
+);
+
+ALTER TABLE `Post` ADD CONSTRAINT `PK_POST` PRIMARY KEY (
+	`PostId`
+);
+
+ALTER TABLE `Comment` ADD CONSTRAINT `PK_COMMENT` PRIMARY KEY (
+	`CommentId`
+);
+
