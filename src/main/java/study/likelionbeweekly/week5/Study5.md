@@ -139,3 +139,4 @@
 >>
 >> MYSQL에서는 지원하지 않기 때문에 LEFT JOIN과 OUTNER JOIN 결과를 합하여 FULL JOIN을 얻을 수 있다.
 
+[실습 과제] (https://euneng356.notion.site/5-3cfee15c64064a37b96f9a50ace23dde?pvs=4)
