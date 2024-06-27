@@ -1,0 +1,28 @@
+# database ?? ??
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/sys?characterEncoding=UTF-8 # Database ??
+    username: root    # mysql? ??? ??? ?? ??? ?? ???.
+    password: # ??? mysql ????
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: TRUE
+        # use_sql_comments:  TRUE
+
+logging:
+  level:
+    org:
+      springframework:
+        jdbc: DEBUG
+      hibernate:
+        SQL: DEBUG  # ??? ?? ?? ??
+        type:
+          descriptor:
+            sql: TRACE
+        orm:
+          jdbc:
+            bind: TRACE # ??? ? ? ?? ??? ?? ??? ?? ??
