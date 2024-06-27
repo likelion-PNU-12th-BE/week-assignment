@@ -3,11 +3,13 @@ package study.likelionbeweekly.week6.comment;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import study.likelionbeweekly.week6.member.Member;
 import study.likelionbeweekly.week6.post.Post;
 
 @Entity
+@Getter
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Comment {
