@@ -5,7 +5,7 @@ spring:
     # 괄호 안의 likeliondb 대신 괄호까지 제외한 5주차에 생성된 데이터베이스 이름을 넣으면 됩니다.
     url: jdbc:mysql://127.0.0.1:3306/5주차 실습?characterEncoding=UTF-8 # Database 이름
     username: root    # mysql에 생성한 사용자 계정 정보를 써야 합니다.
-    password: # 자신의 mysql 비밀번호
+    password: aa125600 # 자신의 mysql 비밀번호
   jpa:
     hibernate:
       ddl-auto: update
