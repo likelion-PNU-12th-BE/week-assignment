@@ -63,8 +63,8 @@ class Repository6Test {
         commentRepo.save(comment1);
         commentRepo.save(comment2);
 
-        Post findPostBy1 = postRepo.findById(1L).orElseThrow();
-        Post findPostBy2 = postRepo.findById(2L).orElseThrow();
+        Post findPostBy1 = postRepo.findById(1L).orElseThrow(() -> new IllegalArgumentException("user doesn't find"));
+        Post findPostBy2 = postRepo.findById(2L).orElseThrow(() -> new IllegalArgumentException("user doesn't find"));
 
         System.out.println("findPostBy1.getComments().get(0) = " + findPostBy1.getComments().get(0));
         System.out.println("findPostBy1.getComments().get(1) = " + findPostBy1.getComments().get(1));
