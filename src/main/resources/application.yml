@@ -1,0 +1,34 @@
+# database \uC5F0\uB3D9 \uC124\uC815
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # \uAD04\uD638 \uC548\uC758 like lion db \uB300\uC2E0 \uAD04\uD638\uAE4C\uC9C0 \uC81C\uC678\uD55C 5\uC8FC\uCC28\uC5D0 \uC0DD\uC131\uB41C \uB370\uC774\uD130\uBCA0\uC774\uC2A4 \uC774\uB984\uC744 \uB123\uC73C\uBA74 \uB429\uB2C8\uB2E4.
+
+
+    #url: jdbc:mysql://127.0.0.1:3306/likelion?characterEncoding=UTF-8 # Database \uC774\uB984
+    url: jdbc:mysql://172.17.0.2:3306/likelion?characterEncoding=UTF-8 # Database \uC774\uB984
+
+
+    username: root    # mysql \uC5D0 \uC0DD\uC131\uD55C \uC0AC\uC6A9\uC790 \uACC4\uC815 \uC815\uBCF4\uB97C \uC368\uC57C \uD569\uB2C8\uB2E4.
+    password: '0000' # \uC790\uC2E0\uC758 mysql \uBE44\uBC00\uBC88\uD638
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: TRUE
+        # use_sql_comments:  TRUE
+
+logging:
+  level:
+    org:
+      springframework:
+        jdbc: DEBUG
+      hibernate:
+        SQL: DEBUG  # \uB85C\uADF8\uB97C \uD1B5\uD574 \uCFFC\uB9AC \uCD9C\uB825
+        type:
+          descriptor:
+            sql: TRACE
+        orm:
+          jdbc:
+            bind: TRACE # \uCFFC\uB9AC\uC758 ? \uC5D0 \uC2E4\uC81C \uBC14\uC778\uB529 \uB418\uB294 \uB370\uC774\uD130 \uB85C\uADF8 \uCD9C\uB825
