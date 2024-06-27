@@ -5,8 +5,6 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import study.likelionbeweekly.week6.post.Post;
-
 @Getter
 @Entity
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
