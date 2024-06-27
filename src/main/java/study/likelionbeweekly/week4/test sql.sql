@@ -1,4 +1,3 @@
-
 select * from users; -- 테이블 조회
 SELECT * FROM likeliondb.users;
 

@@ -1,4 +1,4 @@
-package com.example.weekassignment.week2;
+package study.likelionbeweekly.week2;
 
 public class MakeInstance {
     public static void main(String[] args) {
