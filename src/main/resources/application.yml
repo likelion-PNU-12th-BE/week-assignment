@@ -1,0 +1,45 @@
+# database ?? ??
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # ?? ?? likeliondb ?? ???? ??? 5??? ??? ?????? ??? ??? ???.
+    url: jdbc:mysql://127.0.0.1:3306/likeliondb?characterEncoding=UTF-8 # Database ??
+    username: root    # mysql? ??? ??? ?? ??? ?? ???.
+    password: admin # ??? mysql ????
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: TRUE
+        # use_sql_comments:  TRUE
+
+logging:
+  level:
+    org:
+      springframework:
+        jdbc: DEBUG
+      hibernate:
+        SQL: DEBUG  # ??? ?? ?? ??
+        type:
+          descriptor:
+            sql: TRACE
+        orm:
+          jdbc:
+            bind: TRACE # ??? ? ? ?? ??? ?? ??? ?? ??
+
+#spring:
+#  datasource:
+#    url: jdbc:h2:mem:test;MODE=MySQL
+#    driver-class-name: org.h2.Driver
+#    username: sa
+#    password: password
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-console
+#  jpa:
+#    database-platform: org.hibernate.dialect.MySQLDialect
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: create
