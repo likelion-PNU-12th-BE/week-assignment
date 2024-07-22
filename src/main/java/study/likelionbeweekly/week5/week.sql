@@ -67,22 +67,26 @@ values ('content1', 1, 1),
        ('content8', 4, 4);
 
 # inner join
-    select *
+    select
+*
 from member
          join post p on member.id = p.member_id;
 
 # left join
-    select *
+    select
+*
 from member
          left join post p on member.id = p.member_id;
 
 # right join
-    select *
+    select
+*
 from member
          right join post p on member.id = p.member_id;
 
 # full join
-    select *
+    select
+*
 from member
          left join post p on member.id = p.member_id
 
