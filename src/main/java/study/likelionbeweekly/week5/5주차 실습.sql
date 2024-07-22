@@ -1,19 +1,21 @@
-
+create database likelion;
+show databases;
+use likelion;
 -- 데이터베이스 초기 설정
-CREATE TABLE Members (
+CREATE TABLE Member (
     MemberID INT PRIMARY KEY AUTO_INCREMENT,
     Username VARCHAR(50) NOT NULL,
     Email VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE Posts (
+CREATE TABLE Post (
     PostID INT PRIMARY KEY AUTO_INCREMENT,
     MemberID INT NOT NULL,
     Title VARCHAR(100) NOT NULL,
     FOREIGN KEY (MemberID) REFERENCES Members(MemberID)
 );
 
-CREATE TABLE Comments (
+CREATE TABLE Comment (
     CommentID INT PRIMARY KEY AUTO_INCREMENT,
     PostID INT NOT NULL,
     MemberID INT NOT NULL,
