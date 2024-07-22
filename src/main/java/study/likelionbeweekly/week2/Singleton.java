@@ -1,4 +1,4 @@
-package com.example.weekassignment.week2;
+package study.likelionbeweekly.week2;
 
 public class Singleton {
     //프라이빗 싱글톤 객체 '생성'

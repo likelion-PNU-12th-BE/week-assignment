@@ -1,4 +1,4 @@
-package com.example.weekassignment.week3;
+package study.likelionbeweekly.week3;
 
 public class OutputView {
     public void printProfile(Student student){
